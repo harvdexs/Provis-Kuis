@@ -113,47 +113,55 @@ class MyAppState extends State<MyApp> {
                                 )
                               ],
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
+                            const Divider(
+                              color: Colors.black,
+                              height: 10,
+                              thickness: 1,
+                              indent: 5,
+                              endIndent: 5,
+                            ),
+                            Container(
+                                margin: const EdgeInsets.only(top: 5),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    const Text(
-                                      "Imbas Hasil",
-                                      style: TextStyle(color: Colors.grey),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text(
+                                          "Imbas Hasil",
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                        Text(
+                                            ("${_isiListView[index].getImbalHasil() * _dropdownPeriode.toInt() / 6} %"))
+                                      ],
                                     ),
-                                    Text((_isiListView[index].getImbalHasil() *
-                                            _dropdownPeriode.toInt() /
-                                            6)
-                                        .toString())
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Text(
-                                      "Harga Unit",
-                                      style: TextStyle(color: Colors.grey),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text(
+                                          "Harga Unit",
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                        Text(
+                                            "Rp ${_isiListView[index].getHarrgaUnit()}")
+                                      ],
                                     ),
-                                    Text(
-                                        "Rp ${_isiListView[index].getHarrgaUnit()}")
+                                    Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Text(
+                                          "Dana kelolaan",
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                        Text(
+                                            "Rp ${_isiListView[index].getDanaKelolaan()}")
+                                      ],
+                                    )
                                   ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    const Text(
-                                      "Dana kelolaan",
-                                      style: TextStyle(color: Colors.grey),
-                                    ),
-                                    Text(
-                                        "Rp ${_isiListView[index].getDanaKelolaan()}")
-                                  ],
-                                )
-                              ],
-                            )
+                                ))
                           ]),
                     );
                   },
